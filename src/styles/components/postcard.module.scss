@@ -8,6 +8,7 @@
     height: 100%;
     transition: .3s all ease-in-out;
     box-shadow: rgba(120, 120, 120, 0.2) 0px 7px 29px 0px;
+    cursor: pointer;
 
     &:hover {
         transform: scale(1.03);

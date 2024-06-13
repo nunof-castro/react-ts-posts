@@ -14,7 +14,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <p>Error</p>, // mudar
+    errorElement: <p>Error</p>,
     children: [
       { path: "/", element: <Home /> },
       { path: "/posts/:postId", element: <PostPage /> },

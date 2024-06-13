@@ -1,0 +1,44 @@
+@import "../index.scss";
+
+.commentsForm {
+    margin-top: rem(50);
+    display: flex;
+    flex-direction: column;
+    gap: rem(15);
+    max-width: rem(400);
+
+    .formGroup {
+        display: flex;
+        flex-direction: column;
+        gap: rem(5);
+
+        label {
+            font-size: rem(14);
+            color: $secondary-color;
+        }
+
+        .nameInput,
+        .emailInput,
+        .msgInput {
+            background-color: transparent;
+            border: none;
+            color: white;
+            border-bottom: 1px solid white;
+            font-size: rem(16);
+            padding: rem(5);
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+    }
+
+    .submitBtn {
+        background-color: $primary-color;
+        border: none;
+        padding: rem(10);
+        border-radius: rem(8);
+        cursor: pointer;
+    }
+}
