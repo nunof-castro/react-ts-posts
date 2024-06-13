@@ -1,0 +1,13 @@
+@import "./variables.scss";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $font-body;
+    color: $text-color-light;
+}
+
+body {
+    background-color: #212121;
+}

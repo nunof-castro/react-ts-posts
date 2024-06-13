@@ -1,0 +1,33 @@
+@import "../index.scss";
+
+.navbar {
+    background-color: $primary-color;
+    padding: rem(10) rem(80);
+    display: flex;
+    align-items: center;
+    gap: rem(30);
+
+    * {
+        color: $text-color-light;
+    }
+
+    .logo {
+        font-size: rem(20);
+    }
+
+    .links {
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            transition: .3s all ease-in-out;
+
+            &:hover {
+                text-decoration: underline;
+                color: $secondary-color;
+            }
+        }
+    }
+}
