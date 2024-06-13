@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     errorElement: <p>Error</p>, // mudar
     children: [
       { path: "/", element: <Home /> },
-      { path: "/posts/:id", element: <PostPage /> },
+      { path: "/posts/:postId", element: <PostPage /> },
     ],
   },
 ]);

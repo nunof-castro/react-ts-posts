@@ -2,10 +2,14 @@
 
 .navbar {
     background-color: $primary-color;
-    padding: rem(10) rem(80);
+    padding: rem(20) rem(80);
     display: flex;
     align-items: center;
     gap: rem(30);
+
+    @include breakpoint-max(800px) {
+        padding: rem(20);
+    }
 
     * {
         color: $text-color-light;

@@ -5,10 +5,12 @@ import "./styles/index.scss";
 
 const App: React.FC = () => {
   return (
-    <div>
+    <>
       <Navbar />
-      <Outlet />
-    </div>
+      <div className="container">
+        <Outlet />
+      </div>
+    </>
   );
 };
 

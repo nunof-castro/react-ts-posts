@@ -1,0 +1,61 @@
+@import "../index.scss";
+
+.postsList {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 1fr;
+    gap: rem(30);
+
+    @include breakpoint-max(1400px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include breakpoint-max(1000px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint-max(650px) {
+        grid-template-columns: repeat(1, 1fr);
+        gap: rem(15);
+
+    }
+
+    a {
+        text-decoration: none;
+
+        .post {
+            background-color: rgba($color: #fff, $alpha: .1);
+            padding: rem(20);
+            border-radius: rem(8);
+            height: 100%;
+            transition: .3s all ease-in-out;
+            box-shadow: rgba(120, 120, 120, 0.2) 0px 7px 29px 0px;
+
+            &:hover {
+                transform: scale(1.03);
+            }
+
+            .cardHeader {
+                margin-bottom: rem(30);
+
+                .user {
+                    background-color: $secondary-color;
+                    padding: rem(5) rem(10);
+                    border-radius: rem(8);
+                    font-weight: bold;
+                    color: $text-color-dark;
+                }
+            }
+
+            .cardBody {
+                h3 {
+                    @extend .fontH4;
+                }
+
+                p {
+                    font-size: rem(16);
+                }
+            }
+        }
+    }
+}

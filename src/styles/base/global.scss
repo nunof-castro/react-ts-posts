@@ -1,4 +1,6 @@
 @import "./variables.scss";
+@import "../utils/functions.scss";
+@import "../utils/mixins.scss";
 
 * {
     padding: 0;
@@ -10,4 +12,28 @@
 
 body {
     background-color: #212121;
+}
+
+.container {
+    margin: rem(50) rem(80);
+
+    @include breakpoint-max(800px) {
+        margin: rem(50) rem(20);
+    }
+}
+
+.fontH1,
+.fontH4 {
+    font-family: $font-title;
+    color: $secondary-color;
+}
+
+.fontH1 {
+    font-size: rem(40);
+    margin-bottom: rem(20);
+}
+
+.fontH4 {
+    font-size: rem(18);
+    margin-bottom: rem(20);
 }

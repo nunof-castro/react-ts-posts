@@ -1,5 +1,12 @@
 @import "../index.scss";
 
-.wrapper {
-    background-color: red;
+.postsWrapper {
+    .title {
+        @extend .fontH1;
+
+        span {
+            font-size: rem(16);
+            font-weight: 400;
+        }
+    }
 }
