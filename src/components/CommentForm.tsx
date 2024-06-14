@@ -2,32 +2,43 @@ import React, { useState } from "react";
 import { Comment } from "../types/common";
 import { createComment } from "../utils/fetcher";
 
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import styles from "../styles/components/commentsform.module.scss";
 
 interface CommentFormProps {
   postId: number;
-  onCommentCreated: (newComment: Comment) => void;
 }
 
-const CommentForm: React.FC<CommentFormProps> = ({
-  postId,
-  onCommentCreated,
-}) => {
+const CommentForm: React.FC<CommentFormProps> = ({ postId }) => {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [body, setBody] = useState<string>("");
+
+  const queryClient = useQueryClient();
+
+  const { mutate } = useMutation({
+    mutationFn: async (newComment: Omit<Comment, "id">) =>
+      await createComment(postId, newComment),
+    onSuccess: (newComment) => {
+      queryClient.setQueryData<Comment[]>(["comments", postId], (oldComments) =>
+        oldComments ? [...oldComments, newComment] : oldComments
+      );
+    },
+  });
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
     try {
-      const newComment = await createComment(postId, {
+      const newComment = {
         postId,
         name,
         email,
         body,
-      });
-      onCommentCreated(newComment);
+      };
+
+      mutate(newComment);
+
       setName("");
       setEmail("");
       setBody("");

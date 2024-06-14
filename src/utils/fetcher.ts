@@ -37,16 +37,25 @@ export const createComment = async (
 };
 
 export const deleteComment = async (commentId: number): Promise<void> => {
-  await axios.delete(`${API_URL}/comments/${commentId}`);
+  try {
+    await axios.delete(`${API_URL}/comments/${commentId}`);
+  } catch (error) {
+    throw error;
+  }
 };
 
 export const updateComment = async (
   commentId: number,
   updatedComment: Comment
 ): Promise<Comment> => {
-  const response = await axios.put(
-    `${API_URL}/comments/${commentId}`,
-    updatedComment
-  );
-  return response.data;
+  try {
+    const response = await axios.put(
+      `${API_URL}/comments/${commentId}`,
+      updatedComment
+    );
+
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
 };
