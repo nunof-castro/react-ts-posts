@@ -5,6 +5,7 @@ import App from "./App";
 
 import Home from "./pages/Home";
 import PostPage from "./pages/PostPage";
+import Error from "./pages/Error";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <p>Error</p>,
+    errorElement:<Error/> ,
     children: [
       { path: "/", element: <Home /> },
       { path: "/posts/:postId", element: <PostPage /> },

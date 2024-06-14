@@ -1,0 +1,37 @@
+@import "../index.scss";
+
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  .content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .icon {
+      font-size: rem(200);
+    }
+
+    .message {
+      p {
+        margin-bottom: rem(10);
+
+        span {
+          color: $secondary-color;
+        }
+      }
+
+      a {
+        color: $text-color-light;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}

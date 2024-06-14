@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import PostList from "../components/PostList";
-import styles from "../styles/pages/home.module.scss";
 import { Post } from "../types/common";
 import { fetchPosts } from "../utils/fetcher";
+
+import styles from "../styles/pages/home.module.scss";
 
 const Home: React.FC = () => {
   const [posts, setPosts] = useState<Post[]>([]);
